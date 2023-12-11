@@ -269,6 +269,7 @@ func resourceGUESTCreate(d *schema.ResourceData, m interface{}) error {
 		guest_shutdown_timeout = d.Get("guest_shutdown_timeout").(int)
 	} else {
 		d.Set("guest_shutdown_timeout", 20)
+		guest_shutdown_timeout = 20
 	}
 	if d.Get("ovf_properties_timer").(int) > 0 {
 		d.Set("ovf_properties_timer", d.Get("ovf_properties_timer").(int))
